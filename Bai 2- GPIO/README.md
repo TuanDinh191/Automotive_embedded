@@ -121,4 +121,4 @@ typedef struct
 
 	`uint8_t GPIO_ReadOutputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)`
 
-- Hàm này có chức năng đọc giá trị đầu vào đối với chân ngõ ra của một port GPIO và có giá trị trả về là 1 hoặc 0.
+- Hàm này có chức năng đọc giá trị đầu vào đối với một chân ngõ ra của một port GPIO và có giá trị trả về là 1 hoặc 0.
