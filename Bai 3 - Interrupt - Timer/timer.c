@@ -21,9 +21,9 @@ void GPIO_Config()
 
 void TIM_config(){
 	TIM_TimeBaseInitTypeDef Tim_InitStruct;
-	//Dem 1 lan la 0.1ms 
+	//Dem 1 lan la 1 ms 
 	Tim_InitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
-	Tim_InitStruct.TIM_Prescaler = 26900-1; //0.1ms
+	Tim_InitStruct.TIM_Prescaler = 26900-1; //1 ms
 	Tim_InitStruct.TIM_Period = 0xFFFF;
 	Tim_InitStruct.TIM_CounterMode = TIM_CounterMode_Up;
 	
@@ -43,6 +43,7 @@ int main()
 	TIM_config();
 	while(1)
 	{
+		//Den LED se chop tat 1s 
 		GPIO_SetBits(GPIOD, GPIO_Pin_12);
 		delay_ms(1000);
 		GPIO_ResetBits(GPIOD,GPIO_Pin_12);
