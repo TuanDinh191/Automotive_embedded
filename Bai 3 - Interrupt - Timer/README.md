@@ -63,6 +63,7 @@ Ta sẽ dùng các hàm này khi dùng Timer:
 
 ` void TIM_SetCounter(TIM_TypeDef* TIMx, uint16_t Counter) `
 - Hàm này có tác dụng đặt giá trị ban đầu cho timer bắt đầu đếm.
+
 `uint16_t TIM_GetCounter(TIM_TypeDef* TIMx);`
 - Hàm này có tác dụng lấy giá trị hiện tại khi timer đang đếm.
 
