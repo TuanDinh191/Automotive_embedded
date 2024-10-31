@@ -7,3 +7,6 @@
 # Bài 3: Interrupt - Timer
 #### - Note  for lesson 3:
 - [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/c797d66d01f7d11f195d896204dd20f6c0d947f6/Bai%203%20-%20Interrupt%20-%20Timer)
+# Bài 4: Communication Protocols
+#### - Note  for lesson 4:
+- [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/89d5b34d9489508ecb384022473b76fe4f53651b/Bai%204%20-%20Communication%20Protocols)
