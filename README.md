@@ -6,7 +6,7 @@
 - [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/4514f1fddbb2bcfc0a9cafbaed451854165410a5/Bai%202-%20GPIO)
 # Bài 3: Interrupt - Timer
 #### - Note  for lesson 3:
-- [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/c797d66d01f7d11f195d896204dd20f6c0d947f6/Bai%203%20-%20Interrupt%20-%20Timer)
+- [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/bd40100ee4e8601e8e614a173f9dee2d0011932d/Bai%203%20-%20Interrupt%20-%20Timer)
 # Bài 4: Communication Protocols
 #### - Note  for lesson 4:
 - [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/4f0a6a04d9544a00c9123dcf60e25e27944e2b01/Bai%204%20-%20Communication%20Protocols)
