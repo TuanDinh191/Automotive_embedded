@@ -107,7 +107,7 @@ typedef struct
 - Hàm này có chức năng set giá trị ngõ ra cho một port GPIO, tham số thứ nhất truyền vào là port GPIO nào, tham số thứ 2 truyền vào là giá trị cho 16 chân ngõ ra.
   
 
-	`void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)`
+	void GPIO_SetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 
 - Hàm này có chức năng set bit lên giá trị là 1 cho một chân của một port GPIO, tham số thứ nhất truyền vào là port GPIO nào, tham số thứ 2 truyền vào là cụ thể pin nào của port GPIO.
 
