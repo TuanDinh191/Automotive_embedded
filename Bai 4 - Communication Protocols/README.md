@@ -5,10 +5,11 @@
 #### 2. SPI:
 #### - Định nghĩa: 
 - Giao thức SPI (Serial Peripheral Interface): đây là một chuẩn giao tiếp nối tiếp, có thể giao tiếp đồng bộ ( ví dụ giữa 2 thiết bị cụ thể hơn khi có 2 thiết bị giao tiếp với nhau thì sẽ thống nhất với nhau tại 1 thời điểm nhận hoặc truyền dữ liệu) có thể hoạt động ở 3 chế độ là đơn công (master chỉ truyền cho slave hoặc chỉ có slave truyền cho master, một thiết bị chỉ làm 1 chức năng nhận hoặc truyền  ), bán song công (master có thể truyền cho slave hoặc master nhận từ slave nhưng không cùng 1 thời điểm) song công (Có thể truyền nhận cùng thời điểm).
+
 SPI sử dụng 4 dây để giao tiếp:
 - SCK (Serial Clock): Chân tín hiệu xung clock được tạo bởi Master truyền đến cho slave.
-- MISO (Master Input Slave Output): Chân dữ liệu được tạo bởi Slave truyền về Master.
-- MOSI (Master Output Slave Input): Chân dữ liệu được tạo bởi Master truyền về Slave.
+- MISO (Master Input Slave Output): Chân có dữ liệu được tạo bởi Slave truyền về Master.
+- MOSI (Master Output Slave Input): Chân có dữ liệu được tạo bởi Master truyền về Slave.
 - SS (Slave Select/Chip Select): Chân để chọn slave cụ thể giao tiếp thì master sẽ kéo chân SS xuống mức 0 (0v).
 #### - Quá trình truyền SPI:
 - Để bắt đầu quá trình truyền thì master sẽ kéo chân CS của slave muốn giao tiếp xuống mức 0V để bắt đầu quá trình truyền nhận.
@@ -46,6 +47,7 @@ I2C sử dụng 2 dây để giao tiếp:
 #### 4. UART:
 #### - Định nghĩa:
 -  UART (Universal Asynchronous Receiver-Transmitter): đây là một chuẩn giao tiếp nối tiếp, khác với SPI và I2C thì UART giao tiếp không đồng bộ, không có phân cấp master và slave, chỉ có 2 thiết bị giao tiếp, hoạt động chế độ đơn công hoặc song công sử dụng 2 dây để giao tiếp Tx và Rx, Tx của thiết bị 1 sẽ nối với Rx của thiết bị 2, Rx của thiết bị 1 nối với Tx của thiết bị 2.
+  
 UART sử dụng 2 dây để giao tiếp: 
 - Tx (Transmit): Chân truyền dữ liệu 
 - Rx (Receive):  Chân nhận dữ liệu.
@@ -54,14 +56,18 @@ UART sử dụng 2 dây để giao tiếp:
 - Baudrate: được định nghĩa là số bit truyền được trong 1 giây ta có thể set baudrate 9600, 19200, 38400... bits trên giây.
 - Như đã nói ở trên thì để truyền 1 bit dữ liệu thì ta sẽ canh thời gian bằng nhau của 2 thiết bị để truyền và nhận cùng 1 lúc thay vì dùng timer để canh thì ta sẽ dùng thông số baudrate. Quá trình lặp lại liên tục canh thời gian truyền nhận cho mấy bit dữ liệu tiếp theo.
 - Ta có thể kiểm tra dữ liệu sau khi nhận có đúng hay không bằng cách truyền parity bit bằng cách cộng hoặc không với 1 bit để phù hợp qui luật chẵn (đếm tất cả số bit 1 là số chẵn) hoặc qui luật lẻ (đếm tất cả các bit 1 là số lẻ ) cụ thể:
+
 Qui luật chẵn: 
 - Data khi chuyền là 0b0000 0000 áp dụng qui luật chẵn 0b 0000 0000 0.
 - Data khi chuyền là 0b0011 0100 áp dụng qui luật chẵn 0b 0011 0100 1.
 - Data khi chuyền là 0b1111 1111 áp dụng qui luật chẵn  0b1111 1111 0.
+  
 Qui luật lẻ:
+
 - Data khi chuyền là 0b0000 0000 áp dụng qui luật lẻ 0b 0000 0000 1.
 - Data khi chuyền là 0b0011 0100 áp dụng qui luật lẻ 0b 0011 0100 0.
 - Data khi chuyền là 0b1111 1111 áp dụng qui luật lẻ 0b1111 1111 1.
+  
  Ví dụ dữ liệu truyền đi là 0b 0100 0100 khi áp dụng qui luật chẵn là 0b 0100 0100 0 (đếm tổng cộng có 2 bit) là số chẵn nhưng khi nhận dữ liệu là 0b 0000 0100 0 (đếm tổng cộng có 1 bit) là số lẻ thì kết luận là dữ liệu nhận bị sai.
 - Parity có nhược điểm là chỉ kiểm tra với số lượng bit lỗi là số lẻ, không đúng số lượng bit lỗi là số chẵn.
 - Sau khi truyền xong dữ liệu thì MCU A sẽ kéo chân Tx từ 0 lên 1.
