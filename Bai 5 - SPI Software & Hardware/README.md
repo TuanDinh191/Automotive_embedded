@@ -200,7 +200,7 @@ Dòng đầu tiên ta sẽ kéo chân CS về 0 để master chọn slave giao t
  ```
 - Để nhận 1 byte data trong SPI thì ta sẽ gọi hàm SPI_Receive1Byte dưới đây
 
-Dòng đầu tiên sẽ kiểm tra ngoại vi SPI bên slave có bận đang nhận dữ liệu không nếu không thì sẽ gọi hàm `SPI_I2S_ReceiveData` để lấy dữ liệu từ master truyền đến sau khi đã lấy dữ liệu rồi sẽ kiểm tra cờ RXNE (có dữ liệu trong buffer) sau khi lấy thì dữ liệu trong buffer đã trống chưa rồi sau đó mới trả về giá trị. 
+Dòng đầu tiên sẽ kiểm tra ngoại vi SPI bên slave có bận đang nhận dữ liệu không nếu không thì sẽ gọi hàm `SPI_I2S_ReceiveData` để lấy dữ liệu từ master truyền đến sau khi đã lấy dữ liệu rồi sẽ kiểm tra cờ RXNE (có dữ liệu trong buffer nhận) sau khi lấy thì dữ liệu trong buffer đã trống chưa rồi sau đó mới trả về giá trị. 
 ```
   uint8_t SPI_Receive1Byte(void){
     while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_BSY) == SET);
