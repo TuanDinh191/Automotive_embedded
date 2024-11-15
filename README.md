@@ -10,3 +10,5 @@
 # Bài 4: Communication Protocols
 #### - Note  for lesson 4:
 - [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/4f0a6a04d9544a00c9123dcf60e25e27944e2b01/Bai%204%20-%20Communication%20Protocols)
+#### - Note  for lesson 5:
+- [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/84b581d5c1a114603386e42a5019b78880012074/Bai%205%20-%20SPI%20Software%20%26%20Hardware)
