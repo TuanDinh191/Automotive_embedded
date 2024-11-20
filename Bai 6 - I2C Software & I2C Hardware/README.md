@@ -56,7 +56,7 @@ void I2C_Config()
 	delay_us(1);
 }
  ```
-- Để bắt đầu quá trình truyền và nhận dữ liệu trong I2C thì ta sẽ tạo ra Start_condition là điểu kiện bắt đầu. Ta sẽ kéo chân SDA từ mức cao về mức thấp trước khi kéo chân SCL 
+- Để bắt đầu quá trình truyền và nhận dữ liệu trong I2C thì ta sẽ tạo ra Start_condition là điểu kiện bắt đầu. Ta sẽ kéo chân SDA từ mức cao về mức thấp trước khi kéo chân SCL về mức thấp.
 
 ```
 void I2C_Start()
@@ -115,7 +115,7 @@ status I2C_Write(uint8_t pData) //Write a byte data, return the status of writin
 }
  ```
 
- - Hàm nhận sẽ nhận tương ứng 8 lần (1 lần 1 bit) từ master. Sau khi master nhận đủ 8 bit dữ liệu thì nếu master gửi lại ACK cho slave thì thông báo cho slave tiếp tục truyền dữ liệu tiếp theo hoặc nếu là NACK sẽ thông báo cho slave là không nhận dữ liệu tiếp theo nữa, hàm sẽ trả về giá trị dữ liệu nhận được.      
+ - Hàm nhận sẽ nhận tương ứng 8 lần (1 lần 1 bit) từ slave. Sau khi master nhận đủ 8 bit dữ liệu thì nếu master gửi lại ACK cho slave thì thông báo cho slave tiếp tục truyền dữ liệu tiếp theo hoặc nếu là NACK sẽ thông báo cho slave là không nhận dữ liệu tiếp theo nữa, hàm sẽ trả về giá trị dữ liệu nhận được.      
 
  ```
 uint8_t I2C_Read(ACK_Bit _ACK)
@@ -314,7 +314,7 @@ void I2C_Config()
 
 ` I2C_GenerateSTOP(I2C_TypeDef* I2Cx, FunctionalState NewState)` hàm này có chức năng tạo điều kiện kết thúc sau khi đã hoàn thành quá trình truyền và nhận dữ liệu, tham số thứ nhất truyền vào là chọn bộ I2C để bắt đầu điều kiện, tham số thứ 2 là có tạo điều kiện hoặc không. 
 
-`I2C_Send7BitAddress(I2C_TypeDef *I2C, uint8_t Address, uint8_t I2C_Direction)` hàm này có chức năng sẽ gửi đi 7 bit địa chỉ để xác nhận giao tiếp, tham số truyền vào của hàm là tham số thứ nhất là chọn bộ I2C để giao tiếp, tham số thứ 2 là địa chỉ của thiết bị để giao tiếp, tham số thứ 3 là chọn kiểu truyền hoặc là nhận dữ liệu là bit thứ 8 Read/Write set `I2C_Direction_Transmitter` để truyền hoặc `I2C_Direction_Receiver` để nhận.
+`I2C_Send7BitAddress(I2C_TypeDef *I2C, uint8_t Address, uint8_t I2C_Direction)` hàm này có chức năng sẽ gửi đi 7 bit địa chỉ để xác nhận giao tiếp, tham số truyền vào của hàm là tham số thứ nhất là chọn bộ I2C để giao tiếp, tham số thứ 2 là địa chỉ của thiết bị để giao tiếp, tham số thứ 3 là chọn chế độ truyền hoặc là nhận dữ liệu là bit thứ 8 Read/Write set `I2C_Direction_Transmitter` để truyền hoặc `I2C_Direction_Receiver` để nhận.
 
 `I2C_SendData(I2C_TypeDef* I2Cx, uint8_t Data)` hàm này có chức năng gửi đi 8 bit data tham số thứ nhất truyền vào là chọn bộ I2C, tham số thứ 2 là chọn Data để truyền. 
 
