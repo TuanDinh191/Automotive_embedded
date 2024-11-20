@@ -13,3 +13,6 @@
 # Bài 5: SPI Software & Hardware
 #### - Note  for lesson 5:
 - [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/84b581d5c1a114603386e42a5019b78880012074/Bai%205%20-%20SPI%20Software%20%26%20Hardware)
+# Bài 6: I2C Software & Hardware
+#### - Note  for lesson 6:
+- [README.MD](https://github.com/TuanDinh191/Automotive_embedded/tree/2916e8cd76a3f48a2096803b111da4d211660398/Bai%206%20-%20I2C%20Software%20%26%20I2C%20Hardware)
